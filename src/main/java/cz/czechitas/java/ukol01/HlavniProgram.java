@@ -10,32 +10,6 @@ public class HlavniProgram {
         zofka.setPenWidth(4);
         zofka.setPenColor(Color.black);
         zofka.setSpeed(90);
-
-        /*Část 1
-        Vytvořte metodu nakresliPrasatko(), která nakreslí prasátko jako na obrázku.
-        Jako bonus můžete dokreslit prasátku i ocásek.
-        Metodu zavolejte z metody start ve třídě HlavniProgram, aby se prasátko opravdu nakreslilo do okna aplikace.
-
-        MNOHOUHELNIK:
-        for (var i = 0; i < 16; i++) {
-            zofka.move(33);
-            zofka.turnLeft(22.5);
-        }
-
-        OSMIUHELNIK:
-        for (var i = 0; i < 8; i++) {
-            zofka.move(33);
-            zofka.turnLeft(45);
-        }
-
-        KOLECKO:
-        for (var i = 0; i < 360; i++) {
-            zofka.move(1);
-            zofka.turnLeft(1); }
-        */
-
-        // UKOL S POUZITIM METOD
-
         zofka.penUp();
 
         //1.domecek
@@ -203,34 +177,6 @@ public class HlavniProgram {
         zofka.penDown();
     }
 
-    private void nakresliSlunicko() {
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        nakresliKusSlunicka();
-        nakresliPaprsek();
-        zofka.penUp();
-    }
-
     private void nakresliPraseciOcasek() {
         zofka.penDown();
         zofka.move(33);
@@ -275,11 +221,15 @@ public class HlavniProgram {
         zofka.move(80);
         zofka.penUp();
     }
-    private void nakresliKusSlunicka(){
-        for(var i=0;i< 30;i++){
-            zofka.move(1);
-            zofka.turnLeft(1);
+    private void nakresliSlunicko(){
+        for(var i=0; i< 36; i++){
+            zofka.move(10);
+            zofka.turnLeft(10);
+            if (i % 3 == 0) {
+                nakresliPaprsek();
+            }
         }
+
     }
 
     private void nakresliPaprsek(){
